@@ -1,0 +1,4 @@
+C:/Users/alexf/CLionProjects/ED/cmake-build-debug/CMakeFiles/ED.dir
+C:/Users/alexf/CLionProjects/ED/cmake-build-debug/CMakeFiles/teste_TG.dir
+C:/Users/alexf/CLionProjects/ED/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/alexf/CLionProjects/ED/cmake-build-debug/CMakeFiles/rebuild_cache.dir
