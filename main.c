@@ -179,6 +179,25 @@ int temPar(TAB* arv, int S){
     return aux(arv, arv, S);
 }
 
+int altura_no(TAB* arv){
+    if(!arv)return -1;
+    int altura_esq = altura_no(arv->esq);
+    int altura_dir = altura_no(arv->dir);
+    if (altura_esq > altura_dir)return altura_esq+1;
+    return altura_dir+1;
+}
+int fb(TAB* arv){
+    if(!arv)return 0;
+    return altura_no(arv->esq) - altura_no(arv->dir);
+}
+
+int ehAVL(TAB*arv){
+    if(!arv)return 1;
+    if (abs(fb(arv))>= 2)return 0;
+    int temp = ehAVL(arv->esq);
+    if(!temp)return 0;
+    return ehAVL(arv->dir);
+}
 int main(void) {
     TAB *a = NULL;
     int n;

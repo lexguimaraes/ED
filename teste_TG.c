@@ -168,31 +168,47 @@ int tamCam(TVIZ* path){
     }
     return tam;
 }
-TVIZ* Cam(TG*g, TVIZ*vis, TVIZ* cam, int y){
 
-
-
-
-}
-
-TVIZ* maiorCam(TG* g, int no1, int no2, int L){
-    if(!g)return NULL;
-    TG* no_1 = TG_busca_no(g, no1);
-    int maior = -1;
-    TVIZ* primviz = no_1->prim_viz;
-    while(primviz){
-
-
-
-
-
+int maior_e(TG*g){
+    int n = 0;
+    TG* p = g;
+    for(;p!= NULL;p = p->prox_no){
+        if (p->id_no>n)n = p->id_no;
     }
-
-
-
+    return n;
 }
 
+void teste(TG* g, int k_atual, int k,int dest, int atual, int caminho_atual,int* caminho,int* visitados){
+    visitados[atual] = 1;
+    caminho_atual++;
+    k_atual++;
+    if(k_atual> k)caminho_atual = INT_MAX;
+    if(atual == dest){
+        if (caminho_atual < *caminho)*caminho = caminho_atual;
+    }
+    else{
+        TG* a = TG_busca_no(g,atual);
+        TVIZ* viz = a->prim_viz;
+        while(viz){
+            if(!visitados[viz->id_viz]){
+                teste(g, k_atual,k,dest,viz->id_viz,caminho_atual,caminho,visitados);
+            }
+            viz = viz->prox_viz;
+        }
+    }
+    visitados[atual] = 0;
+}
 
+int caminho(TG*g, int inicio, int dest,k){
+    if(!g)return 0;
+    int* visitados = calloc(maior_e(g)+1,sizeof(int));
+    int *caminho_final = calloc(1,sizeof(int));
+    teste(g,0,k,dest,inicio,0,caminho_final,visitados);
+    int resultado = *caminho_final;
+    free(caminho_final);
+    free(visitados);
+    return resultado;
+}
 
 
 int main(void){
