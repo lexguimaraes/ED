@@ -180,7 +180,7 @@ int maior_e(TG*g){
 
 void teste(TG* g, int k_atual, int k,int dest, int atual, int caminho_atual,int* caminho,int* visitados){
     visitados[atual] = 1;
-    caminho_atual++;
+    caminho_atual++;//caminho_atual += TG_busca_no(g,atual)->peso; caso o grafo seja com pesos.
     k_atual++;
     if(k_atual> k)caminho_atual = INT_MAX;
     if(atual == dest){
