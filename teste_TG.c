@@ -180,7 +180,6 @@ int maior_e(TG*g){
 
 void teste(TG* g, int k_atual, int k,int dest, int atual, int caminho_atual,int* caminho,int* visitados){
     visitados[atual] = 1;   //para ter o caminho precisaria de +2 parametros, o menor caminho e o caminho atual
-    caminho_atual++;    //caminho_atual += TG_busca_no(g,atual)->peso; caso o grafo seja com pesos.
                             //path = TLSE_insere(path, atual);
     k_atual++;
     if(k_atual> k)caminho_atual = INT_MAX;
@@ -192,8 +191,8 @@ void teste(TG* g, int k_atual, int k,int dest, int atual, int caminho_atual,int*
         TVIZ* viz = a->prim_viz;
         while(viz){
             if(!visitados[viz->id_viz]){
-                teste(g, k_atual,k,dest,viz->id_viz,caminho_atual,caminho,visitados);
-            }
+                teste(g, k_atual,k,dest,viz->id_viz,caminho_atual+1,caminho,visitados);
+            }                                            //caminho_atual + viz->peso; caso o grafo seja com pesos.
             viz = viz->prox_viz;
         }
     }
@@ -208,7 +207,7 @@ int caminho(TG*g, int inicio, int dest,int k){
     int* visitados = calloc(maior_e(g)+1,sizeof(int));
     int *caminho_final = calloc(1,sizeof(int));
     *caminho_final = INT_MAX;
-    teste(g,0,k,dest,inicio,0,caminho_final,visitados);
+    teste(g,0,k,dest,inicio,1,caminho_final,visitados);
     int resultado = *caminho_final;
     free(caminho_final);
     free(visitados);
