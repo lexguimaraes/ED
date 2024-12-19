@@ -203,10 +203,11 @@ void teste(TG* g, int k_atual, int k,int dest, int atual, int caminho_atual,int*
                             //free(temp);
 }
 
-int caminho(TG*g, int inicio, int dest,k){
+int caminho(TG*g, int inicio, int dest,int k){
     if(!g)return 0;
     int* visitados = calloc(maior_e(g)+1,sizeof(int));
     int *caminho_final = calloc(1,sizeof(int));
+    *caminho_final = INT_MAX;
     teste(g,0,k,dest,inicio,0,caminho_final,visitados);
     int resultado = *caminho_final;
     free(caminho_final);
@@ -249,6 +250,8 @@ int main(void){
     }
     else break;
   }while(1);
+  int menor_cam = caminho(g,1,5,4);
+  printf("MENOR CAM %d",menor_cam);
   TG_libera(g);
   return 0;
 }
