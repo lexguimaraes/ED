@@ -41,39 +41,6 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/alexf/CLionProjects/ED/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target ED
-
-
-#############################################
-# Order-only phony target for ED
-
-build cmake_object_order_depends_target_ED: phony || CMakeFiles/ED.dir
-
-build CMakeFiles/ED.dir/main.c.obj: C_COMPILER__ED_unscanned_Debug C$:/Users/alexf/CLionProjects/ED/main.c || cmake_object_order_depends_target_ED
-  DEP_FILE = CMakeFiles\ED.dir\main.c.obj.d
-  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\ED.dir
-  OBJECT_FILE_DIR = CMakeFiles\ED.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target ED
-
-
-#############################################
-# Link the executable ED.exe
-
-build ED.exe: C_EXECUTABLE_LINKER__ED_Debug CMakeFiles/ED.dir/main.c.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\ED.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = ED.exe
-  TARGET_IMPLIB = libED.dll.a
-  TARGET_PDB = ED.exe.dbg
-
-# =============================================================================
 # Object build statements for EXECUTABLE target teste_TG
 
 
@@ -82,11 +49,11 @@ build ED.exe: C_EXECUTABLE_LINKER__ED_Debug CMakeFiles/ED.dir/main.c.obj
 
 build cmake_object_order_depends_target_teste_TG: phony || CMakeFiles/teste_TG.dir
 
-build CMakeFiles/teste_TG.dir/teste_TG.c.obj: C_COMPILER__teste_TG_unscanned_Debug C$:/Users/alexf/CLionProjects/ED/teste_TG.c || cmake_object_order_depends_target_teste_TG
-  DEP_FILE = CMakeFiles\teste_TG.dir\teste_TG.c.obj.d
+build CMakeFiles/teste_TG.dir/bibliotecas/TG/teste_TG.c.obj: C_COMPILER__teste_TG_unscanned_Debug C$:/Users/alexf/CLionProjects/ED/bibliotecas/TG/teste_TG.c || cmake_object_order_depends_target_teste_TG
+  DEP_FILE = CMakeFiles\teste_TG.dir\bibliotecas\TG\teste_TG.c.obj.d
   FLAGS = -g -std=gnu90 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\teste_TG.dir
-  OBJECT_FILE_DIR = CMakeFiles\teste_TG.dir
+  OBJECT_FILE_DIR = CMakeFiles\teste_TG.dir\bibliotecas\TG
 
 
 # =============================================================================
@@ -96,7 +63,7 @@ build CMakeFiles/teste_TG.dir/teste_TG.c.obj: C_COMPILER__teste_TG_unscanned_Deb
 #############################################
 # Link the executable teste_TG.exe
 
-build teste_TG.exe: C_EXECUTABLE_LINKER__teste_TG_Debug CMakeFiles/teste_TG.dir/teste_TG.c.obj
+build teste_TG.exe: C_EXECUTABLE_LINKER__teste_TG_Debug CMakeFiles/teste_TG.dir/bibliotecas/TG/teste_TG.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\teste_TG.dir
@@ -105,6 +72,174 @@ build teste_TG.exe: C_EXECUTABLE_LINKER__teste_TG_Debug CMakeFiles/teste_TG.dir/
   TARGET_FILE = teste_TG.exe
   TARGET_IMPLIB = libteste_TG.dll.a
   TARGET_PDB = teste_TG.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target teste_TARVB
+
+
+#############################################
+# Order-only phony target for teste_TARVB
+
+build cmake_object_order_depends_target_teste_TARVB: phony || CMakeFiles/teste_TARVB.dir
+
+build CMakeFiles/teste_TARVB.dir/bibliotecas/arvore-b/teste_TARVB.c.obj: C_COMPILER__teste_TARVB_unscanned_Debug C$:/Users/alexf/CLionProjects/ED/bibliotecas/arvore-b/teste_TARVB.c || cmake_object_order_depends_target_teste_TARVB
+  DEP_FILE = CMakeFiles\teste_TARVB.dir\bibliotecas\arvore-b\teste_TARVB.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\teste_TARVB.dir
+  OBJECT_FILE_DIR = CMakeFiles\teste_TARVB.dir\bibliotecas\arvore-b
+
+build CMakeFiles/teste_TARVB.dir/bibliotecas/arvore-b/TARVB.c.obj: C_COMPILER__teste_TARVB_unscanned_Debug C$:/Users/alexf/CLionProjects/ED/bibliotecas/arvore-b/TARVB.c || cmake_object_order_depends_target_teste_TARVB
+  DEP_FILE = CMakeFiles\teste_TARVB.dir\bibliotecas\arvore-b\TARVB.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\teste_TARVB.dir
+  OBJECT_FILE_DIR = CMakeFiles\teste_TARVB.dir\bibliotecas\arvore-b
+
+build CMakeFiles/teste_TARVB.dir/TLSE.c.obj: C_COMPILER__teste_TARVB_unscanned_Debug C$:/Users/alexf/CLionProjects/ED/TLSE.c || cmake_object_order_depends_target_teste_TARVB
+  DEP_FILE = CMakeFiles\teste_TARVB.dir\TLSE.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\teste_TARVB.dir
+  OBJECT_FILE_DIR = CMakeFiles\teste_TARVB.dir
+
+build CMakeFiles/teste_TARVB.dir/bibliotecas/TLSEINT.c.obj: C_COMPILER__teste_TARVB_unscanned_Debug C$:/Users/alexf/CLionProjects/ED/bibliotecas/TLSEINT.c || cmake_object_order_depends_target_teste_TARVB
+  DEP_FILE = CMakeFiles\teste_TARVB.dir\bibliotecas\TLSEINT.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\teste_TARVB.dir
+  OBJECT_FILE_DIR = CMakeFiles\teste_TARVB.dir\bibliotecas
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target teste_TARVB
+
+
+#############################################
+# Link the executable teste_TARVB.exe
+
+build teste_TARVB.exe: C_EXECUTABLE_LINKER__teste_TARVB_Debug CMakeFiles/teste_TARVB.dir/bibliotecas/arvore-b/teste_TARVB.c.obj CMakeFiles/teste_TARVB.dir/bibliotecas/arvore-b/TARVB.c.obj CMakeFiles/teste_TARVB.dir/TLSE.c.obj CMakeFiles/teste_TARVB.dir/bibliotecas/TLSEINT.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\teste_TARVB.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = teste_TARVB.exe
+  TARGET_IMPLIB = libteste_TARVB.dll.a
+  TARGET_PDB = teste_TARVB.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target heap
+
+
+#############################################
+# Order-only phony target for heap
+
+build cmake_object_order_depends_target_heap: phony || CMakeFiles/heap.dir
+
+build CMakeFiles/heap.dir/bibliotecas/heap/heap.c.obj: C_COMPILER__heap_unscanned_Debug C$:/Users/alexf/CLionProjects/ED/bibliotecas/heap/heap.c || cmake_object_order_depends_target_heap
+  DEP_FILE = CMakeFiles\heap.dir\bibliotecas\heap\heap.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\heap.dir
+  OBJECT_FILE_DIR = CMakeFiles\heap.dir\bibliotecas\heap
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target heap
+
+
+#############################################
+# Link the executable heap.exe
+
+build heap.exe: C_EXECUTABLE_LINKER__heap_Debug CMakeFiles/heap.dir/bibliotecas/heap/heap.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\heap.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = heap.exe
+  TARGET_IMPLIB = libheap.dll.a
+  TARGET_PDB = heap.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target hash
+
+
+#############################################
+# Order-only phony target for hash
+
+build cmake_object_order_depends_target_hash: phony || CMakeFiles/hash.dir
+
+build CMakeFiles/hash.dir/bibliotecas/tabela_hash/teste_TH.c.obj: C_COMPILER__hash_unscanned_Debug C$:/Users/alexf/CLionProjects/ED/bibliotecas/tabela_hash/teste_TH.c || cmake_object_order_depends_target_hash
+  DEP_FILE = CMakeFiles\hash.dir\bibliotecas\tabela_hash\teste_TH.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\hash.dir
+  OBJECT_FILE_DIR = CMakeFiles\hash.dir\bibliotecas\tabela_hash
+
+build CMakeFiles/hash.dir/bibliotecas/tabela_hash/TH.c.obj: C_COMPILER__hash_unscanned_Debug C$:/Users/alexf/CLionProjects/ED/bibliotecas/tabela_hash/TH.c || cmake_object_order_depends_target_hash
+  DEP_FILE = CMakeFiles\hash.dir\bibliotecas\tabela_hash\TH.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\hash.dir
+  OBJECT_FILE_DIR = CMakeFiles\hash.dir\bibliotecas\tabela_hash
+
+build CMakeFiles/hash.dir/TLSE.c.obj: C_COMPILER__hash_unscanned_Debug C$:/Users/alexf/CLionProjects/ED/TLSE.c || cmake_object_order_depends_target_hash
+  DEP_FILE = CMakeFiles\hash.dir\TLSE.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\hash.dir
+  OBJECT_FILE_DIR = CMakeFiles\hash.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target hash
+
+
+#############################################
+# Link the executable hash.exe
+
+build hash.exe: C_EXECUTABLE_LINKER__hash_Debug CMakeFiles/hash.dir/bibliotecas/tabela_hash/teste_TH.c.obj CMakeFiles/hash.dir/bibliotecas/tabela_hash/TH.c.obj CMakeFiles/hash.dir/TLSE.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\hash.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = hash.exe
+  TARGET_IMPLIB = libhash.dll.a
+  TARGET_PDB = hash.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target teste_TARVBM
+
+
+#############################################
+# Order-only phony target for teste_TARVBM
+
+build cmake_object_order_depends_target_teste_TARVBM: phony || CMakeFiles/teste_TARVBM.dir
+
+build CMakeFiles/teste_TARVBM.dir/bibliotecas/arvore-bp/teste_TARVBM.c.obj: C_COMPILER__teste_TARVBM_unscanned_Debug C$:/Users/alexf/CLionProjects/ED/bibliotecas/arvore-bp/teste_TARVBM.c || cmake_object_order_depends_target_teste_TARVBM
+  DEP_FILE = CMakeFiles\teste_TARVBM.dir\bibliotecas\arvore-bp\teste_TARVBM.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\teste_TARVBM.dir
+  OBJECT_FILE_DIR = CMakeFiles\teste_TARVBM.dir\bibliotecas\arvore-bp
+
+build CMakeFiles/teste_TARVBM.dir/bibliotecas/arvore-bp/TARVBM.c.obj: C_COMPILER__teste_TARVBM_unscanned_Debug C$:/Users/alexf/CLionProjects/ED/bibliotecas/arvore-bp/TARVBM.c || cmake_object_order_depends_target_teste_TARVBM
+  DEP_FILE = CMakeFiles\teste_TARVBM.dir\bibliotecas\arvore-bp\TARVBM.c.obj.d
+  FLAGS = -g -std=gnu90 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\teste_TARVBM.dir
+  OBJECT_FILE_DIR = CMakeFiles\teste_TARVBM.dir\bibliotecas\arvore-bp
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target teste_TARVBM
+
+
+#############################################
+# Link the executable teste_TARVBM.exe
+
+build teste_TARVBM.exe: C_EXECUTABLE_LINKER__teste_TARVBM_Debug CMakeFiles/teste_TARVBM.dir/bibliotecas/arvore-bp/teste_TARVBM.c.obj CMakeFiles/teste_TARVBM.dir/bibliotecas/arvore-bp/TARVBM.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\teste_TARVBM.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = teste_TARVBM.exe
+  TARGET_IMPLIB = libteste_TARVBM.dll.a
+  TARGET_PDB = teste_TARVBM.exe.dbg
 
 
 #############################################
@@ -132,7 +267,13 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build ED: phony ED.exe
+build hash: phony hash.exe
+
+build heap: phony heap.exe
+
+build teste_TARVB: phony teste_TARVB.exe
+
+build teste_TARVBM: phony teste_TARVBM.exe
 
 build teste_TG: phony teste_TG.exe
 
@@ -144,7 +285,7 @@ build teste_TG: phony teste_TG.exe
 #############################################
 # Folder: C:/Users/alexf/CLionProjects/ED/cmake-build-debug
 
-build all: phony ED.exe teste_TG.exe
+build all: phony teste_TG.exe teste_TARVB.exe heap.exe hash.exe teste_TARVBM.exe
 
 # =============================================================================
 # Built-in targets
