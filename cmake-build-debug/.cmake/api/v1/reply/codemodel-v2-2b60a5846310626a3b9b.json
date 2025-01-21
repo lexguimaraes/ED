@@ -1,0 +1,96 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.28"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ED",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "hash::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hash-Debug-d86231324e41fcabe805.json",
+					"name" : "hash",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "heap::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-heap-Debug-5ef614313f61a4b97d56.json",
+					"name" : "heap",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "teste_TARVB::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-teste_TARVB-Debug-2d101d3970d2d2c37813.json",
+					"name" : "teste_TARVB",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "teste_TARVBM::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-teste_TARVBM-Debug-55b712687f1ce289af8d.json",
+					"name" : "teste_TARVBM",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "teste_TG::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-teste_TG-Debug-a335af9479ba46b63388.json",
+					"name" : "teste_TG",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/alexf/CLionProjects/ED/cmake-build-debug",
+		"source" : "C:/Users/alexf/CLionProjects/ED"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
