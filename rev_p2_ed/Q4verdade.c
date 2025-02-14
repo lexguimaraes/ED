@@ -15,54 +15,8 @@ int pai(int ind){
     if(ind) return (((ind - sizeof(int))/sizeof(int))/2) * sizeof(int);
     return -1;
 }
-/* ORIGINAL
-int tam(char* narq) {
-    int tam = 0;int buff;
-    FILE* f = fopen(narq, "rb");
-    if (!f)return 0;
-    while (fread(&buff, sizeof(int), 1, f) {
-        tam+=sizeof(int);
-    }
-    fclose(f);
-    return tam;
-}
 
-void min_heapfy(char* narq, int ind) { //COM IND POIS NA PROVA USEI IND
-    int e = esq(ind);
-    int d = dir(ind);
-    int menor = ind;
-    int te, td, tm;
-    int n = tam(narq);
-    FILE* f = fopen(narq, "rb+");
-    if (!f)return;
-    fseek(f,e ,SEEK_SET);
-    fread(&te, sizeof(int),1,f);
-    fseek(f,menor,SEEK_SET);
-    fread(&tm,sizeof(int),1,f);
-    if (e<n && te<tm)menor = e;
-    fseek(f,menor,SEEK_SET);// NA CORRECAO TAVA ESCRITO QUE NAO PRECISAVA, MAS ACHO QUE PRECISAVA SIM
-    fread(&tm,sizeof(int),1,f);
-    fseek(f,d,SEEK_SET);
-    fread(&td,sizeof(int),1,f);
-    if (d<n && td<tm)menor = d;
-    if (menor!= ind) {
-        fseek(f,menor,SEEK_SET);
-        int temp;int tend = menor;int tind;
-        fread(&temp,sizeof(int),1,f);
-        fseek(f,ind,SEEK_SET);
-        fread(&tind, sizeof(int),1,f);
-        fseek(f,ind,SEEK_SET);
-        fwrite(&temp,sizeof(int),1,f);
-        fseek(f,menor,SEEK_SET);
-        fwrite(&tind,sizeof(int),1,f);
-        fclose(f);
-        min_heapfy(narq,menor); //UNICA LINHA DIFERENTE NA CORRECAO, FALTOU UM RETURN PARA NAO FECHAR O ARQUIVO DUAS VEZES
-    }
-    fclose(f);
-}
-*/
 
-// FUNCAO TAM EXATAMENTE IGUAL
 int tam(char* narq) {
     int tam = 0;int buff;
     FILE* f = fopen(narq, "rb");
@@ -74,8 +28,8 @@ int tam(char* narq) {
     return tam;
 }
 
-// MUDEI APENAS A LINHA DA RECURSAO, RETURN PARA NÃO FECHAR O ARQUIVO 2 VEZES
-void min_heapfy(char* narq, int ind) { //IND, NAO END, POIS NA PROVA USEI IND
+
+void min_heapfy(char* narq, int ind) {
     int e = esq(ind);
     int d = dir(ind);
     int menor = ind;
@@ -88,8 +42,8 @@ void min_heapfy(char* narq, int ind) { //IND, NAO END, POIS NA PROVA USEI IND
     fseek(f,menor,SEEK_SET);
     fread(&tm,sizeof(int),1,f);
     if (e<n && te<tm)menor = e;
-    fseek(f,menor,SEEK_SET); // NA CORRECAO TAVA ESCRITO QUE ESSAS DUAS LINHAS COMENTADAS NAO PRECISAVA,
-    fread(&tm,sizeof(int),1,f); //MAS ACHO QUE PRECISAVA SIM, POIS SE O DA DIREITA FOR MENOR QUE O DA ESQUERDA NÃO IRA ATUALIZAR PARA O MENOR DOS FILHOS
+    fseek(f,menor,SEEK_SET);
+    fread(&tm,sizeof(int),1,f);
     fseek(f,d,SEEK_SET);
     fread(&td,sizeof(int),1,f);
     if (d<n && td<tm)menor = d;
@@ -104,7 +58,7 @@ void min_heapfy(char* narq, int ind) { //IND, NAO END, POIS NA PROVA USEI IND
         fseek(f,menor,SEEK_SET);
         fwrite(&tind,sizeof(int),1,f);
         fclose(f);
-        return min_heapfy(narq,menor); //LITERALMENTE UNICA LINHA ALÉM DE TROCAR RETURN POR EXIT(1) QUE EU MUDEI
+        return min_heapfy(narq,menor);
     }
     fclose(f);
 }

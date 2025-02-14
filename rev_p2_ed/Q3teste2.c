@@ -5,79 +5,18 @@ typedef struct par{
 }TPAR;
 
 
-/*         ORIGINAL
-*void misc(char *arqa, char *arqb, char *saida, int k){
-  FILE* t = fopen("dados1.bin","wb");
-  if (!t)return;
-  fclose(t);
-  TH_inicializa("tab1.bin","dados1.bin",5);
-  TH_inicializa("tab2.bin","dados2.bin",5);
-  FILE* a= fopen(arqa,"rb");
-  int buff;
-  while (fread(&buff,sizeof(int),1,a)) {
-    TH_insere("tab1.bin","dados1.bin",5,buff);
-  }
-  fclose(a);
-  a = fopen(arqb,"rb");
-  while (fread(&buff,sizeof(int),1,a)) {
-    TH_insere("tab2.bin","dados2.bin",5,buff);
-  }
-  fclose(a);
-  FILE* hash = fopen("tab1.bin");if (!hash)return;//
-  int vet_a[5];
-  fread(vet_a,sizeof(int),5,hash);
-  fclose(hash);
-  hash = fopen("tab2.bin");if (!hash)return;
-  int vet_b[5];
-  fread(vet_b,sizeof(int),5,hash);
-  fclose(hash);int pos;int pos_b;
-  FILE* da = fopen("dados1.bin");
-  FILE* db = fopen("dados2.bin");
-  for (int i = 0;i<5;i++) {
-    pos = vet_a[i];
-    while (pos!= -1) {
-      fseek(da,pos,SEEK_SET);
-      TA aux_a; // USANDO TA PORQUE A BIBLIOTECA TA DIFERENTE, MAS NA PROVA FOI TNUM
-      fread(&aux_a,sizeof(TA),1,da);
-      for (int j = 0;j<5;j++) {
-        pos_b = vet_b[j];
-        while (pos_b!= -1) {
-          fseek(db,pos_b,SEEK_SET);
-          TA aux_b;
-          fread(&aux_b,sizeof(TA),1,db);
-          if (((aux_a.mat % k) + (aux_b.mat % k)) == k) {
-            FILE* fs = fopen(saida,"at");
-            if (!fs)return;
-            fprintf(fs,"%d\n",aux_a.mat);
-            fprintf(fs,"%d\n",aux_b.mat);
-            fclose(fs);
-          }
-          pos_b = aux_b.prox;
-        }
-
-      }
-      pos = aux_a.prox;
-    }
-  }
-  fclose(da);
-  fclose(db);
-}
- */
 
 
 
 
 
-
-
-// QUESTAO 3 MAIS EFICIENTE
 
 void misc(char *arqa, char *arqb, char *saida, int k){
   FILE* t = fopen("dados1.bin","wb");
-  if (!t)exit(1); // TROCANDO RETURN POR EXIT(1)
+  if (!t)exit(1);
   fclose(t);
-  TH_inicializa("tab1.bin","dados1.bin",k);// MUDANDO TAMANHO PARA USAR DAS PROPRIEDADOS DO HASH
-  TH_inicializa("tab2.bin","dados2.bin",k);//
+  TH_inicializa("tab1.bin","dados1.bin",k);
+  TH_inicializa("tab2.bin","dados2.bin",k);
   FILE* a= fopen(arqa,"rb");
   int buff;
   while (fread(&buff,sizeof(int),1,a)) {
@@ -89,21 +28,21 @@ void misc(char *arqa, char *arqb, char *saida, int k){
     TH_insere("tab2.bin","dados2.bin",k,buff);
   }
   fclose(a);
-  FILE* hash = fopen("tab1.bin","rb");if (!hash)exit(1);// NAO TINHA POSTO O MODO DE ABERTURA; // TROCANDO RETURN POR EXIT(1)
+  FILE* hash = fopen("tab1.bin","rb");if (!hash)exit(1);
   int vet_a[k];
   fread(vet_a,sizeof(int),k,hash);
   fclose(hash);
-  hash = fopen("tab2.bin","rb");if (!hash)exit(1); //MESMA COISA, NAO TINHA POSTO O MODO; // TROCANDO RETURN POR EXIT(1)
+  hash = fopen("tab2.bin","rb");if (!hash)exit(1);
   int vet_b[k];
   fread(vet_b,sizeof(int),k,hash);
   fclose(hash);int pos;int pos_b;
-  FILE* da = fopen("dados1.bin","rb"); // MESMA COISA AAAAAAAAAA
-  FILE* db = fopen("dados2.bin","rb"); // ...
-  for (int i = 1;i<k;i++) { //LOGICA DIFERENTE, MAIS EFICIENTE, INDO NO COMPLEMENTO E PONDO TODAS AS COLISOES NA SAIDA
+  FILE* da = fopen("dados1.bin","rb");
+  FILE* db = fopen("dados2.bin","rb");
+  for (int i = 1;i<k;i++) {
     pos = vet_a[i];
     while (pos!= -1) {
       fseek(da,pos,SEEK_SET);
-      TA aux_a; // USANDO TA PORQUE A BIBLIOTECA TA DIFERENTE, MAS NA PROVA FOI TNUM
+      TA aux_a;
       fread(&aux_a,sizeof(TA),1,da);
       pos_b = vet_b[k-i];
       while (pos_b!= -1) {
@@ -111,7 +50,7 @@ void misc(char *arqa, char *arqb, char *saida, int k){
         TA aux_b;
         fread(&aux_b,sizeof(TA),1,db);
         FILE* fs = fopen(saida,"at");
-        if (!fs)exit(1);                      // TROCANDO RETURN POR EXIT(1);
+        if (!fs)exit(1);
         fprintf(fs,"%d\n",aux_a.mat);
         fprintf(fs,"%d\n",aux_b.mat);
         fclose(fs);

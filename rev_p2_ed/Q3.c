@@ -3,9 +3,9 @@
 typedef struct par{
   int num1, num2;
 }TPAR;
-// NAO PUS ORIGINAL PORQUE,
-// FORA OS COMENTÁRIOS TÁ RODANDO EXATAMENTE IGUAL A PROVA, ABSOLUTAMENTE UNICAS DIFERENÇAS SÃO MODE "rb", QUE TINHA ESQUECIDO EM 4 fopens, COMENTEI QUAIS ERAM
-// ONDE NAO TEM COMETÁRIO ESTÁ IGUAL, RODOU AQUI EM UBUNTU 24.01LTS
+
+
+
 void misc(char *arqa, char *arqb, char *saida, int k){
   FILE* t = fopen("dados1.bin","wb");
   if (!t)return;
